@@ -16,7 +16,11 @@ module.exports = async function (context, req) {
             name: name,
             price: "£"+price,
             description: description
-        }); 
+        });
+
+        /* uncomment to run without calling database
+        * returns: document object in response
+        */
         // document = JSON.stringify({
         //     // create a random ID
         //     id: new Date().toISOString() + Math.random().toString().substr(2, 8),
@@ -30,6 +34,10 @@ module.exports = async function (context, req) {
     context.res = {
         // status: 200, /* Defaults to 200 */
         body: responseMessage
+        
+        /* uncomment to return document object 
+        *when running without calling database
+        */
         // body: document
     };
 }
